@@ -29,10 +29,10 @@ from six import iteritems
 import erpnext
 from erpnext.accounts.utils import get_fiscal_year
 from hrms.hr.utils import get_holiday_dates_for_employee, validate_active_employee
-""" from loan.loan_management.doctype.loan_repayment.loan_repayment import (
+ from loans.loan_management.doctype.loan_repayment.loan_repayment import (
 	calculate_amounts,
 	create_repayment_entry,
-) """
+) 
 from hrms.payroll.doctype.additional_salary.additional_salary import get_additional_salaries
 from hrms.payroll.doctype.employee_benefit_application.employee_benefit_application import (
 	get_benefit_component_amount,
