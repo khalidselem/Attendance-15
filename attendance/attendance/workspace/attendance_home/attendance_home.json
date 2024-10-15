@@ -1,0 +1,303 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"TQOEJ1HNyb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Your Shortcuts</span>\",\"col\":12}},{\"id\":\"CJzi9FinSS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance Calculation\",\"col\":4}},{\"id\":\"hD6n6Kybid\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Permission Application\",\"col\":4}},{\"id\":\"Pb4J3sszqJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance Rule\",\"col\":4}},{\"id\":\"FK9HhntLUZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Rewards\",\"col\":4}},{\"id\":\"2Poar87-PK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Penalties\",\"col\":4}},{\"id\":\"ojBTNt7OBa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Attendance Details\",\"col\":4}},{\"id\":\"ECXOctDnrK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Attendance Summary\",\"col\":4}},{\"id\":\"kn6VwcCwsT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Visit Trends\",\"col\":4}},{\"id\":\"CRMqQzB7KF\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"udL6Hy57A-\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports &amp; Masters</span>\",\"col\":12}},{\"id\":\"KAEvMOiEdR\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}},{\"id\":\"YdRYgnIJOu\",\"type\":\"card\",\"data\":{\"card_name\":\"Employee Penalties\",\"col\":4}},{\"id\":\"eLe9JXwbOB\",\"type\":\"card\",\"data\":{\"card_name\":\"Employee Rewards\",\"col\":4}},{\"id\":\"D-xZVqeIoQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"x8FR5WImHy\",\"type\":\"card\",\"data\":{\"card_name\":\"Employee Penalty\",\"col\":4}},{\"id\":\"fe4ZtQayYR\",\"type\":\"card\",\"data\":{\"card_name\":\"Scrub\",\"col\":4}}]",
+ "creation": "2021-11-13 21:25:05.615845",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "hr",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Attendance Home",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance Calculation",
+   "link_count": 0,
+   "link_to": "Attendance Calculation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance Rule",
+   "link_count": 0,
+   "link_to": "Attendance Rule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Permission Application",
+   "link_count": 0,
+   "link_to": "Permission Application",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Daily Overtime Request",
+   "link_count": 0,
+   "link_to": "Daily Overtime Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Visit Form",
+   "link_count": 0,
+   "link_to": "Visit Form",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Penalties",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Penalty Type",
+   "link_count": 0,
+   "link_to": "Employee Penalty Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Penalties",
+   "link_count": 0,
+   "link_to": "Employee Penalties",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "link_to": "",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Attendance Details",
+   "link_count": 0,
+   "link_to": "Employee Attendance Details",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Attendance Summary",
+   "link_count": 0,
+   "link_to": "Employee Attendance Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Visit Trends",
+   "link_count": 0,
+   "link_to": "Visit Trends",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Penalty",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Penalty",
+   "link_count": 0,
+   "link_to": "Employee Penalty",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Penalty Type",
+   "link_count": 0,
+   "link_to": "Penalty Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Rewards",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Reward Type",
+   "link_count": 0,
+   "link_to": "Employee Reward Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Rewards",
+   "link_count": 0,
+   "link_to": "Employee Rewards",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Event Templates",
+   "link_count": 0,
+   "link_to": "Event Templates",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scrub",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scrub Form",
+   "link_count": 0,
+   "link_to": "Scrub Form",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Scrub Settings",
+   "link_count": 0,
+   "link_to": "Scrub Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-09-02 16:21:23.347685",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Attendance Home",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "HR",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 9.0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Attendance Calculation",
+   "link_to": "Attendance Calculation",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Permission Application",
+   "link_to": "Permission Application",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Attendance Rule",
+   "link_to": "Attendance Rule",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Employee Rewards",
+   "link_to": "Employee Rewards",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Employee Penalties",
+   "link_to": "Employee Penalties",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Employee Attendance Details",
+   "link_to": "Employee Attendance Details",
+   "type": "Report"
+  },
+  {
+   "doc_view": "",
+   "label": "Employee Attendance Summary",
+   "link_to": "Employee Attendance Summary",
+   "type": "Report"
+  },
+  {
+   "doc_view": "",
+   "label": "Visit Trends",
+   "link_to": "Visit Trends",
+   "type": "Report"
+  }
+ ],
+ "title": "Attendance Home"
+}

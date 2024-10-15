@@ -1,0 +1,32 @@
+{
+ "custom_fields": [],
+ "custom_perms": [],
+ "doctype": "Leave Policy Assignment",
+ "links": [],
+ "property_setters": [
+  {
+   "_assign": null,
+   "_comments": null,
+   "_liked_by": null,
+   "_user_tags": null,
+   "creation": "2024-04-20 02:13:24.755573",
+   "default_value": null,
+   "doc_type": "Leave Policy Assignment",
+   "docstatus": 0,
+   "doctype_or_field": "DocField",
+   "field_name": "assignment_based_on",
+   "idx": 0,
+   "is_system_generated": 0,
+   "modified": "2024-04-20 02:13:24.755573",
+   "modified_by": "Administrator",
+   "module": null,
+   "name": "Leave Policy Assignment-assignment_based_on-options",
+   "owner": "Administrator",
+   "property": "options",
+   "property_type": null,
+   "row_name": null,
+   "value": "\nLeave Period\nJoining Date\nDate of Rejoining"
+  }
+ ],
+ "sync_on_migrate": 1
+}

@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-13 21:16:04.795234",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "penalty_type",
+  "from_min",
+  "to_min",
+  "factor"
+ ],
+ "fields": [
+  {
+   "fieldname": "from_min",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "From (min)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_min",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "To (min)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "factor",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Penalty (Hours)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "penalty_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Penalty Type",
+   "options": "Penalty Type"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-10-22 01:25:39.502278",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Late Penalty Rule",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

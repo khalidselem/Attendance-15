@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "creation": "2021-05-07 06:18:31.478760",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "component",
+  "salary_component",
+  "component_option",
+  "amount",
+  "include_in_yearly_increments"
+ ],
+ "fields": [
+  {
+   "fieldname": "component",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Component",
+   "options": "Component",
+   "reqd": 1
+  },
+  {
+   "fieldname": "salary_component",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Salary Component",
+   "options": "Salary Component",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "component_option",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Component Option",
+   "options": "Component Option",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "include_in_yearly_increments",
+   "fieldtype": "Check",
+   "label": "Include in Yearly Increments"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-07-23 18:57:37.595001",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Component Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

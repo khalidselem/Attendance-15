@@ -1,0 +1,784 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Prompt",
+ "creation": "2021-11-05 19:48:29.343824",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "work_details_section",
+  "working_type",
+  "working_hours_per_month",
+  "column_break_3",
+  "working_days_per_month",
+  "working_hours_per_day",
+  "permmisions_section",
+  "enable_permission",
+  "max_permissions_minutes",
+  "max_permissions_times",
+  "column_break_5",
+  "request_period",
+  "max_permission_per_time",
+  "absent_rule_section",
+  "enable_absent",
+  "absent_leave_balance",
+  "absent_salary",
+  "absent_factor",
+  "column_break_15",
+  "absent_leave_component",
+  "absent_salary_component",
+  "absent_penalty_section",
+  "enable_absent_penalty",
+  "absent_penalty_detail",
+  "late_rule_section",
+  "enable_late_rule",
+  "late_salary",
+  "late_leave_balance",
+  "column_break_21",
+  "salary_component",
+  "late_leave_component",
+  "section_break_24",
+  "late_rules",
+  "late_penalty_section",
+  "enable_late_penalty",
+  "deduct_late_penalty_from_salary",
+  "deduct_late_penalty_from_leave_balance",
+  "column_break_33",
+  "late_penalty_salary_component",
+  "late_penalty_leave_type",
+  "late_penalty_rules_section",
+  "late_penalty_rules",
+  "break_rules_section",
+  "deduct_break_from_overtime",
+  "break_mins",
+  "column_break_hsefy",
+  "break_start",
+  "break_end",
+  "overtime_rule_section",
+  "enable_overtime",
+  "overtime_depend_on_requests_only",
+  "overtime_holiday_factor",
+  "overtime_weekend_factor",
+  "overtime_maximum_per_day",
+  "minimum_early_overtime_mintues",
+  "column_break_18",
+  "holiday_overtime_salary_component",
+  "weekend_overtime_salary_component",
+  "normal_overtime_salary_component",
+  "overtime_maximum_per_month",
+  "overtime_moriningevening_section",
+  "enable_overtime_morining_evening",
+  "morining_overtime_start",
+  "morining_overtime_factor",
+  "column_break_ktdpf",
+  "evening_overtime_start",
+  "evening_overtime_factor",
+  "section_break_31",
+  "overtime_rules",
+  "fingerprint_penalty_section",
+  "enable_fingerprint_penalty",
+  "fingerprint_penalty_salary_component",
+  "fingerprint_penalty_out_salary_component",
+  "column_break_26",
+  "fingerprint_penalty_factor",
+  "fingerprint_penalty_factor_out",
+  "less_time_details_section",
+  "less_time",
+  "less_leave_balance",
+  "less_salary",
+  "column_break_35",
+  "less_leave_component",
+  "less_time_salary_component",
+  "less_time_factor",
+  "less_time_penalty_section",
+  "enable_less_time_penalty",
+  "less_time_penalties",
+  "shift_bonus_section",
+  "enable_shift_bonus",
+  "shift_bonus_component",
+  "shift_bonus_rule",
+  "visit_form_details_section",
+  "enable_site_visit",
+  "visit_form_salary_component",
+  "column_break_40",
+  "visit_factor_in_holiday",
+  "visit_factor_in_normal_day",
+  "visit_bonus_rule_section",
+  "enable_visit_bonus",
+  "visit_bonus_salary_component",
+  "visit_bonus_rule",
+  "leaves_without_pay_section",
+  "enable_leaves",
+  "column_break_86",
+  "leaves_salary_component",
+  "joining__exiting_period_section",
+  "joining_exiting_period_salary_component"
+ ],
+ "fields": [
+  {
+   "fieldname": "permmisions_section",
+   "fieldtype": "Section Break",
+   "label": "Permmisions"
+  },
+  {
+   "depends_on": "eval:doc.enable_permission == 1",
+   "fieldname": "max_permissions_minutes",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Max Permissions Minutes",
+   "mandatory_depends_on": "eval:doc.enable_permission == 1"
+  },
+  {
+   "depends_on": "eval:doc.enable_permission == 1",
+   "fieldname": "max_permissions_times",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Max Permissions Times",
+   "mandatory_depends_on": "eval:doc.enable_permission == 1"
+  },
+  {
+   "depends_on": "eval:doc.enable_permission == 1",
+   "fieldname": "max_permission_per_time",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Max Permission Period (minutes)",
+   "mandatory_depends_on": "eval:doc.enable_permission == 1"
+  },
+  {
+   "fieldname": "late_rule_section",
+   "fieldtype": "Section Break",
+   "label": "Late Rule"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_late_rule",
+   "fieldtype": "Check",
+   "label": "Enable Late Rule"
+  },
+  {
+   "fieldname": "salary_component",
+   "fieldtype": "Link",
+   "label": "Late Salary Component",
+   "mandatory_depends_on": "eval:doc.late_salary == 1 && doc.enable_late_rule == 1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "late_rules",
+   "fieldtype": "Table",
+   "label": "Late Rules",
+   "mandatory_depends_on": "eval:doc.enable_late_rule == 1",
+   "options": "Late Rules"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_permission",
+   "fieldtype": "Check",
+   "label": "Enable Permission"
+  },
+  {
+   "fieldname": "overtime_rule_section",
+   "fieldtype": "Section Break",
+   "label": "Overtime Rule"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_overtime",
+   "fieldtype": "Check",
+   "label": "Enable Overtime"
+  },
+  {
+   "fieldname": "overtime_rules",
+   "fieldtype": "Table",
+   "label": "Overtime Rules",
+   "mandatory_depends_on": "eval:doc.enable_overtime==1 && !doc.enable_overtime_morining_evening",
+   "options": "Overtime Rule"
+  },
+  {
+   "fieldname": "overtime_holiday_factor",
+   "fieldtype": "Float",
+   "label": "Overtime Holiday Factor (Hours)",
+   "mandatory_depends_on": "eval:doc.enable_overtime==1"
+  },
+  {
+   "fieldname": "overtime_weekend_factor",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Overtime Weekend Factor (Hours)"
+  },
+  {
+   "fieldname": "overtime_maximum_per_day",
+   "fieldtype": "Float",
+   "label": "Overtime Maximum Per Day (Hours)",
+   "mandatory_depends_on": "eval:doc.enable_overtime==1"
+  },
+  {
+   "fieldname": "overtime_maximum_per_month",
+   "fieldtype": "Float",
+   "label": "Overtime Maximum Per Month (Hours)",
+   "mandatory_depends_on": "eval:doc.enable_overtime==1"
+  },
+  {
+   "depends_on": "eval:doc.enable_permission == 1",
+   "fieldname": "request_period",
+   "fieldtype": "Time",
+   "label": "Request Period",
+   "mandatory_depends_on": "eval:doc.enable_permission == 1"
+  },
+  {
+   "fieldname": "normal_overtime_salary_component",
+   "fieldtype": "Link",
+   "label": "Normal Overtime Salary Component",
+   "mandatory_depends_on": "eval:doc.enable_overtime==1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "weekend_overtime_salary_component",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Weekend Overtime Salary Component",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "holiday_overtime_salary_component",
+   "fieldtype": "Link",
+   "label": "Holiday Overtime Salary Component",
+   "mandatory_depends_on": "eval:doc.enable_overtime==1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "fingerprint_penalty_section",
+   "fieldtype": "Section Break",
+   "label": "Fingerprint Penalty"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_fingerprint_penalty",
+   "fieldtype": "Check",
+   "label": "Enable Fingerprint Penalty"
+  },
+  {
+   "fieldname": "fingerprint_penalty_salary_component",
+   "fieldtype": "Link",
+   "label": "Fingerprint Penalty IN Salary Component",
+   "mandatory_depends_on": "eval:doc.enable_fingerprint_penalty==1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "fingerprint_penalty_factor",
+   "fieldtype": "Float",
+   "label": "Fingerprint Penalty Factor IN (Hours)",
+   "mandatory_depends_on": "eval:doc.enable_fingerprint_penalty == 1"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_details_section",
+   "fieldtype": "Section Break",
+   "label": "Work Details"
+  },
+  {
+   "default": "8",
+   "fieldname": "working_hours_per_day",
+   "fieldtype": "Float",
+   "label": "Working Hours Per Day",
+   "reqd": 1
+  },
+  {
+   "default": "30",
+   "fieldname": "working_days_per_month",
+   "fieldtype": "Float",
+   "label": "Working Days Per Month",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "less_time_details_section",
+   "fieldtype": "Section Break",
+   "label": "Less Time Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "less_time",
+   "fieldtype": "Check",
+   "label": "Less Time"
+  },
+  {
+   "fieldname": "less_time_salary_component",
+   "fieldtype": "Link",
+   "label": "Less Time Salary Component",
+   "mandatory_depends_on": "eval:doc.less_salary==1 && doc.less_time == 1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "less_time_factor",
+   "fieldtype": "Float",
+   "label": "Less Time Factor",
+   "mandatory_depends_on": "eval:doc.less_time==1"
+  },
+  {
+   "fieldname": "visit_form_details_section",
+   "fieldtype": "Section Break",
+   "label": "Visit Form Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_site_visit",
+   "fieldtype": "Check",
+   "label": "Enable Visit Calculation"
+  },
+  {
+   "fieldname": "visit_form_salary_component",
+   "fieldtype": "Link",
+   "label": "Visit Salary Component ",
+   "mandatory_depends_on": "eval:doc.enable_site_visit==1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visit_factor_in_holiday",
+   "fieldtype": "Currency",
+   "label": "Visit in Holiday",
+   "mandatory_depends_on": "eval:doc.enable_site_visit==1",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "visit_factor_in_normal_day",
+   "fieldtype": "Currency",
+   "label": "Visit in Normal Day",
+   "mandatory_depends_on": "eval:doc.enable_site_visit==1",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "absent_rule_section",
+   "fieldtype": "Section Break",
+   "label": "Absent Rule"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_absent",
+   "fieldtype": "Check",
+   "label": "Enable Absent"
+  },
+  {
+   "default": "1",
+   "fieldname": "absent_factor",
+   "fieldtype": "Float",
+   "label": "Absent Factor",
+   "mandatory_depends_on": "eval:doc.enable_absent==1"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "absent_salary_component",
+   "fieldtype": "Link",
+   "label": "Absent Salary Component",
+   "mandatory_depends_on": "eval:doc.absent_salary==1 && doc.enable_absent == 1",
+   "options": "Salary Component"
+  },
+  {
+   "default": "0",
+   "fieldname": "late_salary",
+   "fieldtype": "Check",
+   "label": "Deduct From Salary"
+  },
+  {
+   "default": "0",
+   "fieldname": "late_leave_balance",
+   "fieldtype": "Check",
+   "label": "Deduct From Leave Balance"
+  },
+  {
+   "fieldname": "late_leave_component",
+   "fieldtype": "Link",
+   "label": "Late Leave Component",
+   "mandatory_depends_on": "eval:doc.late_leave_balance == 1 && doc.enable_late_rule == 1",
+   "options": "Leave Type"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.enable_late_rule == 1",
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "absent_salary",
+   "fieldtype": "Check",
+   "label": "Deduct From Salary"
+  },
+  {
+   "default": "0",
+   "fieldname": "absent_leave_balance",
+   "fieldtype": "Check",
+   "label": "Deduct From Leave Balance"
+  },
+  {
+   "fieldname": "absent_leave_component",
+   "fieldtype": "Link",
+   "label": "Absent Leave Component",
+   "mandatory_depends_on": "eval:doc.absent_leave_balance && doc.enable_absent == 1",
+   "options": "Leave Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "less_salary",
+   "fieldtype": "Check",
+   "label": "Deduct From Salary"
+  },
+  {
+   "default": "0",
+   "fieldname": "less_leave_balance",
+   "fieldtype": "Check",
+   "label": "Deduct From Leave Balance"
+  },
+  {
+   "fieldname": "less_leave_component",
+   "fieldtype": "Link",
+   "label": "Less Leave Component",
+   "mandatory_depends_on": "eval:doc.less_leave_balance && doc.less_time == 1",
+   "options": "Leave Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "overtime_depend_on_requests_only",
+   "fieldtype": "Check",
+   "label": "Overtime Depend on Requests Only"
+  },
+  {
+   "fieldname": "late_penalty_section",
+   "fieldtype": "Section Break",
+   "label": "Late Penalty"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_late_penalty",
+   "fieldtype": "Check",
+   "label": "Enable Late Penalty"
+  },
+  {
+   "default": "0",
+   "fieldname": "deduct_late_penalty_from_salary",
+   "fieldtype": "Check",
+   "label": "Deduct From Salary"
+  },
+  {
+   "default": "0",
+   "fieldname": "deduct_late_penalty_from_leave_balance",
+   "fieldtype": "Check",
+   "label": "Deduct From Leave Balance"
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "late_penalty_salary_component",
+   "fieldtype": "Link",
+   "label": "Salary Component",
+   "mandatory_depends_on": "eval:doc.enable_late_penalty&&doc.deduct_late_penalty_from_salary",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "late_penalty_leave_type",
+   "fieldtype": "Link",
+   "label": "Leave Type",
+   "mandatory_depends_on": "eval:doc.enable_late_penalty&&doc.deduct_late_penalty_from_leave_balance",
+   "options": "Leave Type"
+  },
+  {
+   "depends_on": "eval:doc.enable_late_penalty == 1",
+   "fieldname": "late_penalty_rules_section",
+   "fieldtype": "Section Break",
+   "label": "Late Penalty Rules"
+  },
+  {
+   "fieldname": "late_penalty_rules",
+   "fieldtype": "Table",
+   "label": "Late Penalty Rules",
+   "mandatory_depends_on": "eval:doc.enable_late_penalty == 1",
+   "options": "Late Penalty Rule"
+  },
+  {
+   "fieldname": "shift_bonus_section",
+   "fieldtype": "Section Break",
+   "label": "Shift Bonus"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_shift_bonus",
+   "fieldtype": "Check",
+   "label": "Enable Shift Bonus"
+  },
+  {
+   "fieldname": "shift_bonus_component",
+   "fieldtype": "Link",
+   "label": "Salary Component",
+   "mandatory_depends_on": "eval:doc.enable_shift_bonus",
+   "options": "Salary Component"
+  },
+  {
+   "depends_on": "eval:doc.enable_shift_bonus==1",
+   "fieldname": "shift_bonus_rule",
+   "fieldtype": "Table",
+   "label": "Shift Bonus Rule",
+   "mandatory_depends_on": "eval:doc.enable_shift_bonus==1",
+   "options": "Shift Bonus Rule"
+  },
+  {
+   "default": "1",
+   "fieldname": "fingerprint_penalty_factor_out",
+   "fieldtype": "Float",
+   "label": "Fingerprint Penalty Factor OUT (Hours)",
+   "mandatory_depends_on": "eval:doc.enable_fingerprint_penalty == 1"
+  },
+  {
+   "fieldname": "fingerprint_penalty_out_salary_component",
+   "fieldtype": "Link",
+   "label": "Fingerprint Penalty OUT Salary Component",
+   "mandatory_depends_on": "eval:doc.enable_fingerprint_penalty==1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "less_time_penalty_section",
+   "fieldtype": "Section Break",
+   "label": "Less Time Penalty"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_less_time_penalty",
+   "fieldtype": "Check",
+   "label": "Enable Less Time Penalty"
+  },
+  {
+   "fieldname": "less_time_penalties",
+   "fieldtype": "Table",
+   "label": "Less Time Penalties",
+   "mandatory_depends_on": "enable_less_time_penalty",
+   "options": "Less Penalty Rule"
+  },
+  {
+   "fieldname": "absent_penalty_section",
+   "fieldtype": "Section Break",
+   "label": "Absent Penalty"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_absent_penalty",
+   "fieldtype": "Check",
+   "label": "Enable Absent Penalty"
+  },
+  {
+   "depends_on": "enable_absent_penalty",
+   "fieldname": "absent_penalty_detail",
+   "fieldtype": "Table",
+   "label": "Absent Penalty Detail",
+   "mandatory_depends_on": "enable_absent_penalty",
+   "options": "Absent Penalty Detail"
+  },
+  {
+   "default": "Normal",
+   "fieldname": "working_type",
+   "fieldtype": "Select",
+   "label": "Working Type",
+   "options": "Normal\nDaily Target Hour\nMonthly Target Hour"
+  },
+  {
+   "default": "180",
+   "depends_on": "eval:doc.working_type == \"Monthly Target Hour\"",
+   "fieldname": "working_hours_per_month",
+   "fieldtype": "Float",
+   "label": "Target Hours Per Month",
+   "mandatory_depends_on": "eval:doc.working_type == \"Monthly Target Hour\""
+  },
+  {
+   "fieldname": "leaves_without_pay_section",
+   "fieldtype": "Section Break",
+   "label": "Leaves Without Pay"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_leaves",
+   "fieldtype": "Check",
+   "label": "Enable Leaves Without Pay"
+  },
+  {
+   "fieldname": "column_break_86",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leaves_salary_component",
+   "fieldtype": "Link",
+   "label": "Leaves Salary Component",
+   "mandatory_depends_on": "enable_leaves",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "visit_bonus_rule_section",
+   "fieldtype": "Section Break",
+   "label": "Visit Bonus Rule"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_visit_bonus",
+   "fieldtype": "Check",
+   "label": "Enable Visit Bonus"
+  },
+  {
+   "fieldname": "visit_bonus_rule",
+   "fieldtype": "Table",
+   "label": "Visit Bonus Rule",
+   "mandatory_depends_on": "eval:doc.enable_visit_bonus == 1",
+   "options": "Visit Bonus Rule"
+  },
+  {
+   "fieldname": "visit_bonus_salary_component",
+   "fieldtype": "Link",
+   "label": "Visit Bonus Salary Component",
+   "mandatory_depends_on": "eval:doc.enable_visit_bonus == 1",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "overtime_moriningevening_section",
+   "fieldtype": "Section Break",
+   "label": "Overtime Morining/Evening"
+  },
+  {
+   "fieldname": "morining_overtime_start",
+   "fieldtype": "Time",
+   "label": "Morining Overtime Start",
+   "mandatory_depends_on": "enable_overtime_morining_evening"
+  },
+  {
+   "default": "0",
+   "fieldname": "morining_overtime_factor",
+   "fieldtype": "Float",
+   "label": "Morining Overtime Factor"
+  },
+  {
+   "fieldname": "column_break_ktdpf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "evening_overtime_start",
+   "fieldtype": "Time",
+   "label": "Evening Overtime Start",
+   "mandatory_depends_on": "enable_overtime_morining_evening"
+  },
+  {
+   "default": "0",
+   "fieldname": "evening_overtime_factor",
+   "fieldtype": "Float",
+   "label": "Evening Overtime Factor"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_overtime_morining_evening",
+   "fieldtype": "Check",
+   "label": "Enable Overtime Morining/Evening"
+  },
+  {
+   "fieldname": "break_rules_section",
+   "fieldtype": "Section Break",
+   "label": "Break Rules"
+  },
+  {
+   "default": "0",
+   "fieldname": "deduct_break_from_overtime",
+   "fieldtype": "Check",
+   "label": "Deduct Break From Overtime"
+  },
+  {
+   "fieldname": "break_mins",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Break (Minutes)"
+  },
+  {
+   "fieldname": "column_break_hsefy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "break_start",
+   "fieldtype": "Time",
+   "label": "Break Start"
+  },
+  {
+   "fieldname": "break_end",
+   "fieldtype": "Time",
+   "label": "Break End"
+  },
+  {
+   "default": "0",
+   "fieldname": "minimum_early_overtime_mintues",
+   "fieldtype": "Int",
+   "label": "Minimum Early Overtime (Mintues)"
+  },
+  {
+   "fieldname": "joining__exiting_period_section",
+   "fieldtype": "Section Break",
+   "label": "Joining / Exiting Period"
+  },
+  {
+   "fieldname": "joining_exiting_period_salary_component",
+   "fieldtype": "Link",
+   "label": "Salary Component",
+   "options": "Salary Component"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-31 20:01:01.168914",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Attendance Rule",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

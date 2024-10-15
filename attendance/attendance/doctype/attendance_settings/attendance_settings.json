@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-30 20:25:26.022673",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "requests_settings_section",
+  "employee_request_max_limit",
+  "column_break_2",
+  "approve_request_max_limit",
+  "permission_settings_section",
+  "permission_start_day",
+  "permission_applicable_after",
+  "column_break_7",
+  "permission_payroll_period"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_request_max_limit",
+   "fieldtype": "Float",
+   "label": "Employee Request Max Limit"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "approve_request_max_limit",
+   "fieldtype": "Float",
+   "label": "Approve Request Max Limit"
+  },
+  {
+   "fieldname": "requests_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Requests Settings"
+  },
+  {
+   "fieldname": "permission_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Permission Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "permission_start_day",
+   "fieldtype": "Int",
+   "label": "Permission Start Day In Month"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "permission_payroll_period",
+   "fieldtype": "Check",
+   "label": "Permissions Depends on Active Payroll Period "
+  },
+  {
+   "default": "0",
+   "fieldname": "permission_applicable_after",
+   "fieldtype": "Int",
+   "label": "Permission Applicable After (Days)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-08-29 22:01:34.215262",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Attendance Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

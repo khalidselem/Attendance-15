@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2021-09-19 14:12:30.350403",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "transaction_date",
+  "column_break_2",
+  "naming_series",
+  "employee_details_section",
+  "employee",
+  "department",
+  "column_break_7",
+  "employee_name",
+  "deduction_details_section",
+  "hourly_leave_type",
+  "effecting_type",
+  "salary_component",
+  "leave_component",
+  "column_break_15",
+  "from_time",
+  "to_time",
+  "duration",
+  "section_break_17",
+  "justification",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Transaction No",
+   "options": "HL-LIST-.YYYY.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Transaction Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hourly_leave_type",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Hourly Leave Type",
+   "options": "Hourly Leave Type",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "hourly_leave_type.effecting_type",
+   "fieldname": "effecting_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Effecting Type",
+   "options": "\nNo Deduction\nSalary Deduction\nLeaves Balance Deduction",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.effecting_type == \"Salary Deduction\"",
+   "fetch_from": "hourly_leave_type.salary_component",
+   "fetch_if_empty": 1,
+   "fieldname": "salary_component",
+   "fieldtype": "Link",
+   "label": "Salary Component",
+   "mandatory_depends_on": "eval:doc.effecting_type == \"Salary Deduction\"",
+   "options": "Salary Component"
+  },
+  {
+   "depends_on": "eval:doc.effecting_type == \"Leaves Balance Deduction\"",
+   "fetch_from": "hourly_leave_type.leave_component",
+   "fetch_if_empty": 1,
+   "fieldname": "leave_component",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Leave Component",
+   "mandatory_depends_on": "eval:doc.effecting_type == \"Leaves Balance Deduction\"",
+   "options": "Leave Type"
+  },
+  {
+   "fieldname": "deduction_details_section",
+   "fieldtype": "Section Break",
+   "label": "Deduction Details"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "duration",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Duration (Hours)",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "justification",
+   "fieldtype": "Text",
+   "label": "Justification"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Hourly Leave",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-07-03 21:24:17.758703",
+ "modified_by": "Administrator",
+ "module": "Cabelco",
+ "name": "Hourly Leave",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

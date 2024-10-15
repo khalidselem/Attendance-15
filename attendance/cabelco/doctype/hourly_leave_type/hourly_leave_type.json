@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "autoname": "field:hourly_leave_type",
+ "creation": "2021-09-19 14:04:48.884905",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "hourly_leave_type",
+  "effecting_type",
+  "column_break_4",
+  "salary_component",
+  "leave_component"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "HL-TYPE-.YYYY.-"
+  },
+  {
+   "fieldname": "hourly_leave_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Hourly Leave Type",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "effecting_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Effecting Type",
+   "options": "\nNo Deduction\nSalary Deduction\nLeaves Balance Deduction",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "salary_component",
+   "fieldtype": "Link",
+   "label": "Salary Component",
+   "mandatory_depends_on": "eval:doc.effecting_type == \"Salary Deduction\"",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "leave_component",
+   "fieldtype": "Link",
+   "label": "Leave Component",
+   "mandatory_depends_on": "eval:doc.effecting_type == \"Leaves Balance Deduction\"",
+   "options": "Leave Type"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-03-26 14:31:44.187479",
+ "modified_by": "Administrator",
+ "module": "Cabelco",
+ "name": "Hourly Leave Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "hourly_leave_type",
+ "track_changes": 1
+}

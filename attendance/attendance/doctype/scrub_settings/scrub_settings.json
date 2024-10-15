@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-11 21:09:21.994617",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "scrub_component",
+  "default_warehouse",
+  "column_break_3",
+  "return_component",
+  "months"
+ ],
+ "fields": [
+  {
+   "fieldname": "scrub_component",
+   "fieldtype": "Link",
+   "label": "Scrub Component",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "default_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "return_component",
+   "fieldtype": "Link",
+   "label": "Return Component",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "months",
+   "fieldtype": "Int",
+   "label": "Return After (Months)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-01-11 21:09:34.579866",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Scrub Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

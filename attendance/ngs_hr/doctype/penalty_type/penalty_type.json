@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:penalty_name",
+ "creation": "2022-10-21 15:19:49.104638",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "penalty_name",
+  "based_on_payroll_period",
+  "continuous_penalty",
+  "salary_component",
+  "description",
+  "section_break_3",
+  "penalties"
+ ],
+ "fields": [
+  {
+   "fieldname": "penalty_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Penalty Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "penalties",
+   "fieldtype": "Table",
+   "label": "Penalties",
+   "options": "Penalty Type Detail",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "based_on_payroll_period",
+   "fieldtype": "Check",
+   "label": "Based On Payroll Period"
+  },
+  {
+   "fieldname": "salary_component",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Salary Component",
+   "options": "Salary Component",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "continuous_penalty",
+   "fieldtype": "Check",
+   "label": "Continuous Penalty"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-07 20:50:16.640315",
+ "modified_by": "Administrator",
+ "module": "NGS HR",
+ "name": "Penalty Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

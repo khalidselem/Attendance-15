@@ -1,0 +1,32 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "creation": "2024-05-18 18:03:51.363847",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Leave Application",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<h1>Leave Application Notification</h1>\n<h3>Details:</h3>\n\n\t<table class=\"table table-bordered small\" style=\"max-width: 500px;\">\n\t\t<tr>\n\t\t\t<td>Employee</td>\n\t\t\t<td>{{employee_name}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Leave Type</td>\n\t\t\t<td>{{leave_type}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>From Date</td>\n\t\t\t<td>{{from_date}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>To Date</td>\n\t\t\t<td>{{to_date}}</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Status</td>\n\t\t\t<td>{{status}}</td>\n\t\t</tr>\n\t</table>\n\n\t{% set doc_link = frappe.utils.get_url_to_form('Leave Application', name) %}\n\n\t<br><br>\n\t<a class=\"btn btn-primary\" href=\"{{ doc_link }}\" target=\"_blank\">{{ _('Open Now') }}</a>",
+ "modified": "2024-05-18 18:04:23.222004",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Leave Application Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "employee_user"
+  },
+  {
+   "receiver_by_document_field": "owner"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Peter Maged",
+ "sender_email": "peterelpop.fcih@gmail.com",
+ "subject": "Leave Approval Notification"
+}

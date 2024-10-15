@@ -1,0 +1,219 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DOR.####",
+ "creation": "2022-03-12 22:15:06.062906",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "creation_guide_section",
+  "employee_id",
+  "department",
+  "column_break_3",
+  "employee_name",
+  "job_title",
+  "overtime_type_section",
+  "office",
+  "column_break_8",
+  "outside",
+  "section_break_10",
+  "date",
+  "time_from",
+  "column_break_13",
+  "day",
+  "time_to",
+  "explanation_section",
+  "approved",
+  "not_approved",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_id.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_id.designation",
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "label": "Job Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overtime_type_section",
+   "fieldtype": "Section Break",
+   "label": "Overtime Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "office",
+   "fieldtype": "Check",
+   "label": "Office"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "outside",
+   "fieldtype": "Check",
+   "label": "Outside"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_from",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Time From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Day",
+   "options": "\nSunday\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_to",
+   "fieldtype": "Time",
+   "label": "Time To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "explanation_section",
+   "fieldtype": "Section Break",
+   "label": "Explanation"
+  },
+  {
+   "default": "0",
+   "fieldname": "approved",
+   "fieldtype": "Check",
+   "label": "Approved"
+  },
+  {
+   "default": "0",
+   "fieldname": "not_approved",
+   "fieldtype": "Check",
+   "label": "Not approved"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Daily Overtime Request",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "description": "The request must be submitted within 48 hours and should not exceed this timeframe.",
+   "fieldname": "creation_guide_section",
+   "fieldtype": "Section Break",
+   "label": "Creation Guide"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-10 12:27:02.995765",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Daily Overtime Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

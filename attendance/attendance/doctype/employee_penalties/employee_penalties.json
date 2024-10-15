@@ -1,0 +1,268 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2021-11-27 18:56:18.139215",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_details_section",
+  "naming_series",
+  "employee",
+  "employee_name",
+  "column_break_5",
+  "company",
+  "department",
+  "penalty_details_section",
+  "penalty_type",
+  "description",
+  "column_break_10",
+  "payroll_date",
+  "posting_date",
+  "salary_details_section",
+  "salary_component",
+  "type",
+  "column_break_13",
+  "based_on",
+  "amount",
+  "days",
+  "properties_and_references_section",
+  "ref_doctype",
+  "ref_docname",
+  "column_break_22",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "EMP-PTY-.YY.-.MM.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "salary_details_section",
+   "fieldtype": "Section Break",
+   "label": "Salary Details"
+  },
+  {
+   "fetch_from": "penalty_type.salary_component",
+   "fieldname": "salary_component",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Salary Component",
+   "options": "Salary Component",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "salary_component.type",
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Salary Component Type",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "mandatory_depends_on": "eval:doc.based_on == \"Amount\"",
+   "options": "Company:company:default_currency",
+   "read_only": 1,
+   "read_only_depends_on": "eval:doc.based_on == \"Days\"",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "The date on which Salary Component with Amount will contribute for Earnings/Deduction in Salary Slip. ",
+   "fieldname": "payroll_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payroll Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "properties_and_references_section",
+   "fieldtype": "Section Break",
+   "label": "Properties and References"
+  },
+  {
+   "fieldname": "ref_doctype",
+   "fieldtype": "Link",
+   "label": "Reference Document Type",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ref_docname",
+   "fieldtype": "Dynamic Link",
+   "label": "Reference Document",
+   "no_copy": 1,
+   "options": "ref_doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Penalties",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "penalty_details_section",
+   "fieldtype": "Section Break",
+   "label": "Penalty Details"
+  },
+  {
+   "fieldname": "penalty_type",
+   "fieldtype": "Link",
+   "label": "Penalty Type",
+   "options": "Employee Penalty Type",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "penalty_type.description",
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "based_on",
+   "fieldtype": "Select",
+   "label": "Based on",
+   "options": "Amount\nDays"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.based_on == \"Days\"",
+   "fieldname": "days",
+   "fieldtype": "Float",
+   "label": "Days",
+   "mandatory_depends_on": "eval:doc.based_on == \"Days\"",
+   "read_only_depends_on": "eval:doc.based_on == \"Amount\""
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-11-27 19:25:08.585511",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Employee Penalties",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "employee",
+ "track_changes": 1
+}

@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "creation": "2021-09-19 14:19:29.582928",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_no",
+  "employee_name",
+  "column_break_4",
+  "leave_date",
+  "hourly_leave_type",
+  "duration_section",
+  "from_time",
+  "to_time",
+  "duration",
+  "justification_section",
+  "justification"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "employee_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Employee No",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hourly_leave_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Type",
+   "options": "Hourly Leave Type",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "leave_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "From",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "justification",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Justification"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_no.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "justification_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Float",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "duration_section",
+   "fieldtype": "Section Break",
+   "label": "Duration"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-09-22 16:04:04.756676",
+ "modified_by": "Administrator",
+ "module": "Cabelco",
+ "name": "Hourly Leave Employee",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

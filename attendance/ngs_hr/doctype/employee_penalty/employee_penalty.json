@@ -1,0 +1,260 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-21 15:53:10.861683",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "penalty_date",
+  "column_break_3",
+  "payroll_period",
+  "payroll_effect_date",
+  "employee_details_section",
+  "employee",
+  "employee_name",
+  "designation",
+  "column_break_9",
+  "branch",
+  "department",
+  "penalty_details_section",
+  "penalty_type",
+  "based_on_payroll_period",
+  "previous_times",
+  "current_time",
+  "column_break_15",
+  "edit_penalty_amount",
+  "factor",
+  "penalty_amount",
+  "additional_information_section",
+  "notes",
+  "section_break_24",
+  "attendance_calculation",
+  "salary_slip",
+  "column_break_27",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "EMP-PEN-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "EMP-PEN-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payroll_effect_date",
+   "fieldtype": "Date",
+   "label": "Payroll Effect Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "penalty_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Penalty Type",
+   "options": "Penalty Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Details"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "penalty_details_section",
+   "fieldtype": "Section Break",
+   "label": "Penalty Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "previous_times",
+   "fieldtype": "Int",
+   "label": "Previous Times",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "factor",
+   "fieldtype": "Float",
+   "label": "Factor (Days)",
+   "read_only_depends_on": "eval:!doc.edit_penalty_amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "penalty_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Penalty Amount",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "current_time",
+   "fieldtype": "Int",
+   "label": "Current Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "additional_information_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Penalty",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_penalty_amount",
+   "fieldtype": "Check",
+   "label": "Edit Penalty Amount"
+  },
+  {
+   "fieldname": "payroll_period",
+   "fieldtype": "Link",
+   "label": "Payroll Period",
+   "mandatory_depends_on": "eval:doc.based_on_payroll_period",
+   "options": "Payroll Period"
+  },
+  {
+   "default": "0",
+   "fetch_from": "penalty_type.based_on_payroll_period",
+   "fieldname": "based_on_payroll_period",
+   "fieldtype": "Check",
+   "label": "Based On Payroll Period",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "attendance_calculation",
+   "fieldtype": "Link",
+   "label": "Attendance Calculation",
+   "no_copy": 1,
+   "options": "Attendance Calculation",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "penalty_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Penalty Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "salary_slip",
+   "fieldtype": "Link",
+   "label": "Salary Slip",
+   "no_copy": 1,
+   "options": "Salary Slip",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-11-07 20:58:05.670905",
+ "modified_by": "Administrator",
+ "module": "NGS HR",
+ "name": "Employee Penalty",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

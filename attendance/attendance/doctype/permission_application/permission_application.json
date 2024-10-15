@@ -1,0 +1,282 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2021-11-11 22:54:55.989871",
+ "description": "Apply / Approve Permission",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_licd",
+  "naming_series",
+  "employee",
+  "employee_name",
+  "column_break_4",
+  "posting_date",
+  "permission_type",
+  "department",
+  "section_break_5",
+  "day",
+  "from_time",
+  "total_minutes",
+  "column_break1",
+  "status",
+  "to_time",
+  "description",
+  "section_break_7",
+  "leave_approver",
+  "leave_approver_name",
+  "column_break_18",
+  "sb10",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "HR-PERM-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "permission_type",
+   "fieldtype": "Select",
+   "ignore_user_permissions": 1,
+   "in_standard_filter": 1,
+   "label": "Permission Type",
+   "options": "Late in\nEarly Out",
+   "reqd": 1,
+   "search_index": 1,
+   "translatable": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Day",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "total_minutes",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Minutes",
+   "no_copy": 1,
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break",
+   "print_width": "50%",
+   "width": "50%"
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Reason",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Permission Approver"
+  },
+  {
+   "fieldname": "leave_approver",
+   "fieldtype": "Link",
+   "label": "Permission Approver",
+   "options": "User"
+  },
+  {
+   "fieldname": "leave_approver_name",
+   "fieldtype": "Data",
+   "label": "Permission Approver Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Open\nApproved\nRejected\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Permission Application",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "description": "Permission must be requested ahead of the required time and will be processed within 24 hours of submission on the system. The minimum duration for each request is one hour, and the maximum is two hours.",
+   "fieldname": "section_break_licd",
+   "fieldtype": "Section Break",
+   "label": "Creation Guide"
+  }
+ ],
+ "icon": "fa fa-calendar",
+ "is_submittable": 1,
+ "links": [],
+ "max_attachments": 3,
+ "modified": "2024-09-10 12:17:40.417018",
+ "modified_by": "Administrator",
+ "module": "Attendance",
+ "name": "Permission Application",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "All"
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Leave Approver",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Leave Approver",
+   "write": 1
+  }
+ ],
+ "search_fields": "employee,employee_name,permission_type,from_time,to_time,day",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "timeline_field": "employee",
+ "title_field": "employee_name"
+}
